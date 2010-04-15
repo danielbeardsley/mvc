@@ -86,19 +86,12 @@ or
 
 === A Testing Mixin:  Whorm::TestMacros
 The <tt>whorm</tt> Gem includes a small set of testing macros to help unit-test models.
-This requires the 'Shoulda' gem from thoughtbot.  Include this mixin inside the
-<tt>ActiveSupport::TestCase</tt> class in <tt>test/test_helper.rb</tt>
+Using this macro requires the 'Shoulda' gem from thoughtbot
 
 ==== Usage
-<tt>test/test_helper.rb</tt>
-    class ActiveSupport::TestCase
-      extend Whorm::TestMacros
-      #...
-    end
-
 In individual model unit tests:
     class ModelTest < ActiveSupport::TestCase
-      should_require_whorm_fields :name, :email, :city
+      should_have_whorm_fields_for_fieldset :fieldset_name, [:name, :email, :city]
       #...
       #other tests
     end
