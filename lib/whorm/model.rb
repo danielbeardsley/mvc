@@ -258,8 +258,6 @@ module Whorm
         
         params = self.whorm_column_names if params.empty?
         
-        associations = whorm_associations
-        
         params.each do |f|
           if f.kind_of?(Hash)
             if f.keys.size == 1 && f.keys[0].is_a?(Symbol) && f.values[0].is_a?(Array) # {:association => [:field1, :field2]}
